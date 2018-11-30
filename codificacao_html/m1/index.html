@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--v17-->
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../APIWrapper.min.js"></script>
+        <script src="../SCOFunctions.min.js"></script>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../estilos.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../extras.min.css" type="text/css">
+        <link rel="stylesheet" href="../simulacao.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../animacoes.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../animacoes-evento.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../player/mediaelementplayer.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../plugins/plyr/plyr.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../slick/slick.min.css" type="text/css">
+        <link rel="stylesheet" href="../slick/slick-theme.min.css" type="text/css">
+        <link rel="stylesheet" href="../plugins/timelinr/css/style.css" type="text/css" media="all"/>
+        <link rel="stylesheet" href="../estilos-customizados.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="../implementacao_estilos.css" type="text/css" media="all"/>
+        
+	    
+	    <title>NOME DO CURSO</title>
+	</head>
+	<body class="institucional" onLoad="SCORMFunctions.loadPage()" onunload="return SCORMFunctions.unloadPage()">
+		<div id="pagina">
+	   		<header>
+				<div class="bloco-total topo">
+					<div class="bloco">
+						<div class="col_50 logo">
+						</div>
+						<div class="col_50 aba">
+							<div class="aba-area-curso">&nbsp;</div>
+						</div>
+					</div>
+				</div>
+				<div class="bloco dados-curso">
+					<div class="col_50 curso">
+						<h1 class="texto-branco">&nbsp;</h1>
+					</div>
+					<div class="col_50 modulo">
+						<h5>&nbsp;</h5>
+						<h4>&nbsp;</h4>
+						<h6>&nbsp;</h6>
+					</div>
+				</div>
+		   	</header>
+		   	<div class="bloco">
+				<div class="col_50 esquerda"></div>
+				<div class="col_50 direita"></div>
+			</div>
+	    	<div class="container-wrapper">
+				<section id="results" class="container principal" data-tela-anterior="0" data-tela-atual="0" data-possui-controles="1" data-codigo="NUMERAÇÃO DO CURSO_NUMERO DO MÓDULO">
+				</section>
+		   	</div>
+		</div>
+	    <audio id="audioblank" src="../blank.mp3" type="audio/mpeg"></audio>
+	    <div id="mascara-iniciar"><span></span><button class="bt-grande">Iniciar</button></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../player/mediaelement-and-player.min.js"></script>
+        <script src="../plugins/timelinr/js/jquery.timelinr-0.9.6.js"></script>
+        <script src="../plugins/plyr/plyr.min.js"></script>
+        <script src="https://cdn.rangetouch.com/0.0.9/rangetouch.js" async></script>
+        <script src="../slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../zoom/jquery.zoom.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../imagemap/jquery.rwdImageMaps.min.js"></script>
+        <script src="../script.min.js"></script>
+        <script src="../extras.min.js"></script>
+        <script src="../configuracoes.js"></script>
+        <script src="../carregar.js"></script>
+	    <script>
+	        // addEventListener support for IE8
+	        function bindEvent(element, eventName, eventHandler) {
+	            if (element.addEventListener) {
+	                element.addEventListener(eventName, eventHandler, false);
+	            } else if (element.attachEvent) {
+	                element.attachEvent('on' + eventName, eventHandler);
+	            }
+	        }
+
+	        // Listen to messages from parent window
+	        bindEvent(window, 'message', function (e) {
+	            results.innerHTML = e.data;
+	        });
+	    </script>
+ 	</body>
+</html>

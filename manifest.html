@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>FCAV Module Builder Manifest</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="css/bootstrap.css">
+  		<link rel="stylesheet" href="css/style.css">
+		<script> 
+			window.onbeforeunload = function(){
+			  return 'Você tem certeza que deseja sair?';
+			};
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html" target="_blank">Início</a></li>
+						<li><a href="manifest.html" target="_blank">Manifest</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="row" style="margin-right: 10px;">
+			<div class="col-md-12 text-right">
+				<button id="htmlcode" type="button" data-toggle="modal" data-target=".bs-example-modal-lg-gerarcodigo" class="btn btn-default"><i class="fa fa-code" aria-hidden="true"></i> HTML</button>
+			</div>
+		</div>
+		<hr>
+
+		<div id="codigo">
+			<div class="row" style="margin-left: 10px;margin-right: 10px;">
+				<div class="col-md-6 form-inline">
+					<div class="col-md-9 form-inline">
+						<label>Nome Do curso</label><div id="nomecurso" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="col-md-3 form-inline">
+						<label>Nª da Demanda</label><div id="ndemanda" contenteditable="true" class="form-control"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<hr>
+					  	<button id="inserirmodulos" type="button" class="btn btn-info inserirmodulos">Inserir Módulos</button>
+					  	<button id="limparmodulos" type="button" class="btn btn-default limparmodulos">Limpar</button><hr>
+					  	<ol id="camposmodulos" class="modulosmani">
+						</ol>
+					</div>
+				</div>
+			</div>
+			
+	  	</div>
+
+		<!-- modal Gerar código -->
+		<div class="modal fade bs-example-modal-lg-gerarcodigo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-backdrop="static">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button id="limpartextox" type="button" class="close start2" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Código Final</h4>
+					</div>
+					<div class="modal-body">
+						<textarea id="recebecode"></textarea>
+					</div>
+					<div class="modal-footer">
+						<center>
+							<button type="button" class="btn btn-default start clear" data-dismiss="modal" id="limpartext">Fechar</button>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="botaoclose"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/manifest.min.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,254 @@
+#timeline * {
+	margin: 0;
+	padding: 0;
+}
+
+#timeline a {
+	/*color: #ffffcc;*/
+	text-decoration: none;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+	transition: 0.5s;
+}
+	#timeline a:hover,
+	#timeline a.selected {
+		color: #ffcc00;
+	}
+
+	#dates a{background:none;}
+
+#timeline h1,
+#timeline h2,
+#timeline h4,
+#timeline h5,
+#timeline h6 {
+	text-align: center;
+	color: #ccc;
+	text-shadow: #000 1px 1px 2px;
+	margin-bottom: 5px;
+}
+	#timeline h1 {
+		font-size: 18px;
+	}
+	#timeline h2 {
+		font-size: 14px;
+	}
+
+.sociales {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+	#timeline {
+		width: 400px;
+		height: 195px;
+		overflow: hidden;
+		margin: 0 auto;
+		position: relative;
+		background: url('../images/dot.gif') left 32px repeat-x;
+        margin-top:1rem;
+	}
+    
+        @media screen and (min-width:480px){
+            #timeline {
+                width: 430px;
+            }
+        }
+    
+    /*Nexus 6P*/
+    @media screen and (min-width:768px){
+        #timeline{
+            width:700px;
+            height:265px;
+            background-position:left 39px;
+        }
+    }
+    
+    @media screen and (min-width:992px){
+        #timeline{
+            width:730px;
+            height:285px;
+        }
+    }
+    
+    @media screen and (min-width:1200px){
+        #timeline{
+            width:940px;
+            height:350px;
+            background-position:left 45px;
+        }
+    }
+    
+		#dates {
+			width: 400px;
+			height: 3.75rem;
+			overflow: hidden;
+		}
+        
+        @media screen and (min-width:480px){
+            #dates {
+                width: 430px;
+            }
+        }
+        
+        /*Nexus 6P*/
+        @media screen and (min-width:768px){
+            #dates{
+                width:700px;
+            }
+        }
+        
+        @media screen and (min-width:992px){
+            #dates{
+                width:730px;
+            }
+        }
+        
+        @media screen and (min-width:1200px){
+            #dates{
+                width:940px;
+            }
+        }
+        
+			#dates li {
+				list-style: none;
+				float: left;
+				width: 6.25rem;
+				height: 3.125rem;
+				font-size: 1.5rem;
+				text-align: center;
+				background: url('../images/biggerdot.png') center bottom no-repeat;
+			}
+				#dates a {
+					line-height: 2rem;
+					padding-bottom: 0.625rem;
+				}
+				#dates .selected {
+			        font-size: 2rem;
+				}
+		
+		#issues {
+			width: 400px;
+			height: 200px;
+			overflow: hidden;
+		}	
+			#issues li {
+				width: 400px;
+				height: 200px;
+				list-style: none;
+				float: left;
+			}
+            
+            @media screen and (min-width:480px){
+                #issues, #issues li{
+                    width:430px;
+                }
+            }
+            
+            /*Nexus 6P*/
+            @media screen and (min-width:768px){
+                #issues, #issues li{
+                    width:700px;
+                    height:265px;
+                }
+            }
+            
+            @media screen and (min-width:992px){
+                #issues, #issues li{
+                    width:730px;
+                    height:285px;
+                }
+            }
+            
+            @media screen and (min-width:1200px){
+                #issues, #issues li{
+                    width:940px;
+                    height:350px;
+                }
+            }
+				#issues li img {
+					max-width:20%;
+                    height:auto;
+                    float:left;
+                    margin-left:10%;
+				}
+                
+				#issues li h1 {
+					color: #ffcc00;
+					font-size: 2.5rem;
+					margin: 1rem 0;
+					text-shadow: #000 1px 1px 2px;
+				}
+                    @media screen and (max-width:767px){
+                        #issues li h1 {
+                            margin-top:.5rem;
+                            margin-bottom:0;
+                        }
+                    }
+                
+				#issues li p {
+					font-size: 1rem;
+					font-weight: normal;
+					line-height: 1.375rem;
+					text-shadow: #000 1px 1px 2px;
+                    float:left;
+                    width:50%;
+                    margin-left:10%;
+				}
+                    #issues li p.rolagem{
+                        max-height: 90px;
+                    }
+                    
+                    #timeline.sem-imagem #issues li p{
+                        width:80%;
+                    }
+		
+		#grad_left,
+		#grad_right {
+			width: 100%;
+			height: 3.75rem;
+			position: absolute;
+			top: 0;
+		}
+        
+			#grad_left {
+		        left: 0;
+		        /*background: url('../images/grad_left.png') repeat-y top left;*/
+			}
+			#grad_right {
+		        right: 0;
+		        /*background: url('../images/grad_right.png') repeat-y top right;*/
+			}
+		
+		#next,
+		#prev {
+			position: absolute;
+			top: 0;
+			font-size: 70px;
+			top: 50%;
+			width: 22px;
+			height: 38px;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			text-indent: -9999px;
+			overflow: hidden;
+            background-color:transparent;
+		}
+			#next:hover,
+			#prev:hover {
+				background-position: 0 -76px;
+			}
+			#next {
+				right: 0;
+				background-image: url('../images/next.png');
+			}
+			#prev {
+				left: 0;
+				background-image: url('../images/prev.png');
+			}
+				#next.disabled,
+				#prev.disabled {
+					opacity: 0.2;
+				}

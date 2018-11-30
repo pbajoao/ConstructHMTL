@@ -1,0 +1,211 @@
+/* Estilos adicionais para novas ferramentas */
+
+/* Largura de Colunas */
+.col_45{
+	width: 48%;
+}
+.col_40{
+	width: 40%;
+}
+.col_10{
+	width: 10%;
+}
+/* Posição dos elementos na tela */
+.coluna-dupla{
+	display: flex;
+	justify-content: space-between;
+}
+/* Margens */
+.espaco-abaixo{
+	margin-bottom: 1rem;
+}
+/* Efeito Desabilitado */
+.desabilitado{
+	cursor:not-allowed;
+	background-color: #ccc!important;
+	opacity: .5;
+}
+.indisponivel{
+	display: none;
+}
+.disponivel{
+	display: block;
+}
+
+/* Tabelas */
+.tabela{
+    width: 100%;
+    background-color: #FFF;
+    color: #000;
+    -webkit-box-shadow:0 6px 6px rgba(0,0,0,.3);
+}
+.tabela, th, td{
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    padding: 2px;
+    padding-left: 5px; 
+    padding-right: 5px; 
+}
+.efeito-mouse tr:hover {
+	background-color: #f5f5f5;
+}
+.listras tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+.espaco-esquerdo{
+    padding-left: 10px;
+}
+.texto-direita{
+	text-align: right;
+}
+
+/* Modificações no box-branco */
+.box-branco{
+    margin: 0!important;
+    background-color: #FFF;
+    padding: 1rem!important;
+}
+.box-branco p{
+    color:#000!important;
+}
+.box-branco strong{
+    font-size: 1rem!important;
+}
+.margem-direita{
+    margin-right:-16px;
+}
+/* Subtela nova */
+.subtela-tipo-4{
+	left: 2rem;
+	right: 2rem;
+	top:0!important;
+	height: 95%!important;
+	border: none!important;
+
+}
+.subtela-tipo-4 .controles{
+	bottom: initial;
+	right: 0;
+	left: -25px;
+	top: 50%;
+}
+.tela .subtela-tipo-4 .controles  .bt-retroceder{
+	border-radius: 60%;
+}
+.tela .subtela-tipo-4 .controles .bt-recarregar, .tela .subtela-tipo-4 .controles .bt-tocarpausar{
+	display: none;
+}
+.tela .subtela-tipo-4 .controles .bt-avancar{
+	float: none;
+	position: absolute;
+	right: -25px;
+	border-radius: 60%;
+
+}
+.subtela-tipo-4 .ponteiros{
+	left: 50%;
+	-webkit-transform:translate3d(-50%,0,0);
+	-moz-transform:translate3d(-50%,0,0);
+	-o-transform:translate3d(-50%,0,0);
+	-ms-transform:translate3d(-50%,0,0);
+	bottom: 0;
+
+}
+
+/* Efeitos da tela ebook */
+.m4-t2-comp{
+    max-width: 51%;
+    top: 25%;
+}
+    @media screen and (min-width:768px){
+        .m4-t2-comp{
+            top: 20%;
+        }
+    }
+    @media screen and (min-width:1200px){
+        .m4-t2-comp{
+            top:16%;
+            
+        }
+    }
+
+.m4-t2-nuvem{
+    max-width: 27%;
+    top: 29%;
+    left: 12%;
+}
+    @media screen and (min-width:768px){
+        .m4-t2-nuvem{
+            top: 26%;
+        }
+        
+    }
+    @media screen and (min-width:1200px){
+        .m4-t2-nuvem{
+            top: 23%;
+            left: 12%;
+        }
+    }
+    
+    .m4-t2-nuvem-entra{
+        animation: entrada-porcima .25s ease 1.5s;
+            -webkit-animation: entrada-porcima .25s ease 1.5s;
+            -moz-animation: entrada-porcima .25s ease 1.5s;
+            -o-animation: entrada-porcima .25s ease 1.5s;
+    }
+    .m4-t2-nuvem-sai{
+        animation: saida-porcima .5s ease 3s;
+            -webkit-animation: saida-porcima .5s ease 3s;
+            -moz-animation: saida-porcima .5s ease 3s;
+            -o-animation: saida-porcima .5s ease 3s;
+    }
+    
+.m4-t2-seta{
+    top: 46%;
+    left: 22%;
+    max-width: 6%;
+}
+    @media screen and (min-width:768px){
+        .m4-t2-seta{
+            top: 49%;
+        }
+        
+    }
+    @media screen and (min-width:1200px){
+        .m4-t2-seta{
+            top: 44%;
+            left: 21%;
+        }
+    }
+    
+    .m4-t2-seta-entra{
+        animation: entrada-porcima .5s ease 2s;
+            -webkit-animation: entrada-porcima .5s ease 2s;
+            -moz-animation: entrada-porcima .5s ease 2s;
+            -o-animation: entrada-porcima .5s ease 2s;
+    }
+    
+    .m4-t2-seta-sai{
+        animation: saida-porcima .5s ease 2s;
+            -webkit-animation: saida-porcima .5s ease 2s;
+            -moz-animation: saida-porcima .5s ease 2s;
+            -o-animation: saida-porcima .5s ease 2s;
+    }
+    
+.m4-t2-certif{
+    top: 30%;
+    left: 17%;
+    max-width: 18%;
+}
+    @media screen and (min-width:768px){
+        .m4-t2-certif{
+            top: 27%;
+        }
+        
+    }
+    @media screen and (min-width:1200px){
+        .m4-t2-certif{
+            top: 24%;
+            left: 16%;
+        }
+    }

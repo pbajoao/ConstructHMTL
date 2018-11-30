@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Interface para montagem de conteúdos HTML5">
+		<title>FCAV Module Builder</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="css/bootstrap.css">
+  		<link rel="stylesheet" href="css/style.css">
+		<!--<script src="ckeditor/ckeditor.js"></script>-->
+		<link rel="stylesheet" href="plugin/css/froala_editor.css">
+		<link rel="stylesheet" href="plugin/css/froala_style.css">
+		<link rel="stylesheet" href="plugin/css/plugins/code_view.css">
+		<link rel="stylesheet" href="plugin/css/plugins/colors.css">
+		<link rel="stylesheet" href="plugin/css/plugins/image_manager.css">
+		<link rel="stylesheet" href="plugin/css/plugins/image.css">
+		<link rel="stylesheet" href="plugin/css/plugins/line_breaker.css">
+		<link rel="stylesheet" href="plugin/css/plugins/char_counter.css">
+		<link rel="stylesheet" href="plugin/css/plugins/fullscreen.css">
+		<link rel="stylesheet" href="plugin/css/plugins/file.css">
+		<link rel="stylesheet" href="plugin/css/plugins/quick_insert.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+		<script> 
+			window.onbeforeunload = function(){
+			  return 'Você tem certeza que deseja sair?';
+			};
+		</script>
+	</head>
+	<body>
+		<noscript>
+			<center><p>Atenção! Esta aplicação só funciona com javascript.</p></center>
+		</noscript>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html" target="_blank">Início</a></li>
+						<li><a href="manifest.html" target="_blank">Manifest</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<button id="atualizaIdlista" type="button" class="btn btn-default" style="margin-top: 10px;" ><i class="fa fa-refresh" aria-hidden="true"></i> Atualizar</button>
+						<label class="upload btn btn-default" style="margin-top: 10px;"><input type="file" id="openFile"/><i class="fa fa-upload" aria-hidden="true"></i> <span>Carregar arquivo...</span></label>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="row" style="margin-right: 10px;">
+			<div class="col-md-12 text-right">
+				<button id="desblvisual" type="button" class="cria btn btn-danger"><i class="fa fa-unlock" aria-hidden="true"></i></i> Desbloquear</button>
+				<button onClick="downloadInnerHtml();" type="button" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+				<button id="visualizar" type="button" class="btn btn-info" disabled><i class="fa fa-eye" aria-hidden="true"></i> Visualizar</button>
+				<button id="htmlcode" type="button" data-toggle="modal" data-target=".bs-example-modal-lg-gerarcodigo" class="btn btn-default"><i class="fa fa-code" aria-hidden="true"></i> HTML</button>
+				<button onClick="downloadcursoInnerHtml('index.html');" type="button" class="btn btn-warning"><i class="fa fa-file-code-o" aria-hidden="true"></i> Gerar INDEX</button>
+			</div>
+		</div>
+		<hr>
+
+		<div id="codigo">
+			<div class="row" style="margin-left: 10px;margin-right: 10px;">
+				<div class="col-md-12 form-inline">
+					<div class="form-group">
+						<label>Nome Do curso</label><div id="nomec" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Nª da Demanda</label><div id="ncor" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Nome Do Módulo</label><div id="nomem" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Nome Do Módulo CISCO</label><div id="nomemC" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Nº Módulo</label><div id="numm" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Caminho imagem</label><div id="cimg" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Caminho áudio</label><div id="caudio" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Caminho e-book</label><div id="nomebook" contenteditable="true" class="form-control"></div>
+					</div>
+					<div class="form-group">
+						<label>Caminho anexo</label><div id="nomeanexo" contenteditable="true" class="form-control"></div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div id="controle" class="row" style="margin-left: 7px;margin-right: 1px; ">
+				<div class="col-md-2 borda-right">
+					<div class="text-center margem"><span><strong>Base de telas</strong></span></div>
+					<ul class="nav nav-pills nav-stacked rolagem">
+						<li class="mouse"><a id="scriptcapadocurso" class="novoscript">Capa do Curso <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptmodulo" class="novoscript">Capa do Módulo <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scripttextoimagem" class="novoscript">Texto à Esquerda <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptimagemtexto" class="novoscript">Texto à Direita <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptbox" class="novoscript">Fundo Livre <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptencerra" class="novoscript">Encerramento <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptdupla" class="novoscript">Coluna Dupla <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptvideotutorial" class="novoscript">Vídeo tutorial <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptvideonormal" class="novoscript">Vídeo <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptsubtelasimg" class="novoscript">Subtela s/img <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptsubtelacimg" class="novoscript">Subtela c/img <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptmap" class="novoscript">Mapeamento <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptgaleria" class="novoscript">Galeria <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptebook" class="novoscript">E-book <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptcreditos" class="novoscript">Créditos <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptlacuna" class="novoscript">Lacuna <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptmultipla" class="novoscript">Múltipla <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptverdadeirofalso" class="novoscript">Verdadeiro Falso <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptquestao" class="novoscript">Questão <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptcorrespondencia" class="novoscript">Correspondência <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+						<li class="mouse"><a id="scriptlikert" class="novoscript">Likert <i class="fa fa-plus verde" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<div class="text-center"><span><strong>Listas</strong></span></div>
+					<ol id="controlelistas" class="listasdetelas">
+					</ol>
+				</div>
+			</div>
+	  	</div>
+
+		<!-- modal Gerar código -->
+		<div class="modal fade bs-example-modal-lg-gerarcodigo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" data-backdrop="static">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button id="limpartextox" type="button" class="close start2" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Código Final</h4>
+					</div>
+					<div class="modal-body">
+						<textarea id="recebecode"></textarea>
+					</div>
+					<div class="modal-footer">
+						<center>
+							<button type="button" class="btn btn-default start clear" data-dismiss="modal" id="limpartext">Fechar</button>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="botaoclose"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/editorplugincustom.min.js"></script>
+		<script type="text/javascript" src="js/manipulacao.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+		<script type="text/javascript" src="plugin/js/froala_editor.min.js" ></script>
+		<script type="text/javascript" src="plugin/js/plugins/char_counter.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/code_beautifier.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/code_view.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/colors.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/draggable.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/entities.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/file.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/fullscreen.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/image.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/image_manager.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/line_breaker.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/inline_style.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/link.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/lists.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/quick_insert.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/quote.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/table.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/save.min.js"></script>
+		<script type="text/javascript" src="plugin/js/plugins/url.min.js"></script>
+	</body>
+</html>

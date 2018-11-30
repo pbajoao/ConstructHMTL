@@ -1,0 +1,53 @@
+/*cores*/
+body.institucional .aba-area-curso {
+    background-color: #00665E;
+    color: #fff;
+}
+
+.acessorios .bt-glossario{display:none;}
+
+
+.fundo-curso-0xx-escuro {
+    background-color:#00665E;
+}
+
+.fundo-curso-0xx-claro{
+    background-color:#00665E;
+}
+
+.fundo-curso-057{
+background-color:#00665E;}
+
+.tela .linksembackground a {
+    background: none;
+}
+
+.elementos-ao-lado {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+.elementos-ao-lado .corrige-lado{
+    
+    break-inside:avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Balão de conversa */
+.borda-balao{
+    border-color: #!important;
+}
+.borda-balao.inferior-direito:before {
+    border-color: # # transparent transparent!important;
+}
+.inferior-direito:after{
+    border-color: # # transparent transparent!important;
+}
+.borda-balao.inferior-esquerdo:before {
+    border-color: # transparent transparent #!important;
+}
+.inferior-esquerdo:after{
+    border-color: # transparent transparent #!important;
+}

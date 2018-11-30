@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="SEBRAE-SP-0XX" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  
+  <organizations default="C0XX">
+    <organization identifier="C0XX" structure="hierarchical">
+      <title>NOME DO CURSO</title>
+      <item identifier="C0XX-M1" isvisible="true" identifierref="R_C0XX-M1">
+        <title>MODULO 1</title>
+      </item>
+      <item identifier="C0XX-M2" isvisible="true" identifierref="R_C0XX-M2">
+        <title>MODULO 2</title>
+      </item>
+      <item identifier="C0XX-M3" isvisible="true" identifierref="R_C0XX-M3">
+        <title>MODULO 3</title>
+      </item>
+      <item identifier="C0XX-M4" isvisible="true" identifierref="R_C0XX-M4">
+        <title>MODULO 4</title>
+      </item>
+      <item identifier="C0XX-M5" isvisible="true" identifierref="R_C0XX-M5">
+        <title>MODULO 5</title>
+      </item>
+      <item identifier="C0XX-M6" isvisible="true" identifierref="R_C0XX-M6">
+        <title>MODULO 6</title>
+      </item>	  
+    </organization>
+  </organizations>
+  
+  <resources>
+    <resource identifier="R_C0XX-M1" type="webcontent" href="m1/index.html" adlcp:scormtype="sco">
+      <file href="m1/index.html"/>
+      <dependency identifierref="R_API"/>
+    </resource>
+    <resource identifier="R_C0XX-M2" type="webcontent" href="m2/index.html" adlcp:scormtype="sco">
+      <file href="m2/index.html"/>
+      <dependency identifierref="R_API"/>
+    </resource>
+    <resource identifier="R_C0XX-M3" type="webcontent" href="m3/index.html" adlcp:scormtype="sco">
+      <file href="m3/index.html"/>
+      <dependency identifierref="R_API"/>
+    </resource>
+    <resource identifier="R_C0XX-M4" type="webcontent" href="m4/index.html" adlcp:scormtype="sco">
+      <file href="m4/index.html"/>
+      <dependency identifierref="R_API"/>
+    </resource>
+    <resource identifier="R_C0XX-M5" type="webcontent" href="m5/index.html" adlcp:scormtype="sco">
+      <file href="m5/index.html"/>
+      <dependency identifierref="R_API"/>
+    </resource>
+    <resource identifier="R_C0XX-M6" type="webcontent" href="m6/index.html" adlcp:scormtype="sco">
+      <file href="m6/index.html"/>
+      <dependency identifierref="R_API"/>
+    </resource>	
+    
+    <resource identifier="R_API" adlcp:scormtype="asset" type="webcontent"> 
+        <file href="SCOFunctions.js"/> 
+        <file href="APIWrapper.js"/> 
+    </resource>
+  </resources>
+</manifest>
+
